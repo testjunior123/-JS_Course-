@@ -1,3 +1,5 @@
+/* exercise made along with videos
+
 // variable and data type
 var FirstName= 'John';
 var age= 30;
@@ -49,3 +51,24 @@ console.log(x);
 x++ // as x+2
 
 console.log(x);
+
+end of video course*/
+
+// excercise for made by me
+
+var johnMass,johnHeight,markMass,markHeight;
+johnMass = 80;
+johnHeight = 180;
+markMass = 120;
+markHeight = 160;
+
+//BMI mass= mass/ height^2
+
+var johnBMI,markBMI;
+johnBMI= johnMass / (johnHeight*johnHeight);
+markBMI = markMass / (markHeight*markHeight);
+johnBMIisBigger = johnBMI > markBMI;
+
+console.log('John BMI is ' + johnBMI);
+console.log('Mark BMI is ' + markBMI);
+console.log('John BMI is bigger than Mark? ' + johnBMIisBigger);

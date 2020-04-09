@@ -55,7 +55,7 @@ console.log(x);
 end of video course*/
 
 // excercise for made by me
-
+/** 
 var johnMass,johnHeight,markMass,markHeight;
 johnMass = 80;
 johnHeight = 180;
@@ -72,3 +72,38 @@ johnBMIisBigger = johnBMI > markBMI;
 console.log('John BMI is ' + johnBMI);
 console.log('Mark BMI is ' + markBMI);
 console.log('John BMI is bigger than Mark? ' + johnBMIisBigger);
+
+end of comment */
+
+// If else statement
+
+/** var name = 'john';
+var civilStatus = prompt('Please enter some text','married');
+
+if (civilStatus == 'married'){
+    console.log(name + ' is married!');
+} else {
+    console.log(name + " will be married soon");
+}
+
+*/
+
+var johnMass,johnHeight,markMass,markHeight;
+johnMass = 80;
+johnHeight = 180;
+markMass = 120;
+markHeight = 160;
+
+//BMI mass= mass/ height^2
+
+var johnBMI,markBMI;
+johnBMI= 80;
+markBMI = 100;
+
+if (johnBMI > markBMI) {
+    console.log('John BMI is higher than Mark about ' + (johnBMI - markBMI));
+} else {
+    console.log('Mark BMI is higher than John about ' + (markBMI - johnBMI));
+}
+
+    

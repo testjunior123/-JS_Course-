@@ -293,9 +293,8 @@ console.log(mydata1);
 
 // exercise
 
-
-
-
+/**
+ 
 function tipCalculator(bill){
   var percentage;
 
@@ -318,3 +317,240 @@ var tips = [tipCalculator(bill[0]),tipCalculator(bill[1]),tipCalculator(bill[2])
 var totalAmount= [bill[0]+tips[0],bill[1]+tips[1],bill[2]+tips[2]]
 
 console.log(totalAmount);
+
+* 
+ */
+
+ /******
+  * Objects definition
+  
+
+var currentYear = new Date().getFullYear();
+
+  var person = {
+    firstName: 'john',
+    lastName: 'deere',
+    birthYear: 1990,
+    siblings: ['Tom','Ana'],
+    fullName: function(){
+        return this.firstName + ' ' + this.lastName;
+    },
+    calcAge: function(){
+        // return currentYear - this.birthYear;
+        this.age = currentYear - this.birthYear; // a new propoerty will be stored in the object - age
+    }
+
+};
+
+
+// or
+    var person2 = new Object();
+    person2.firstName = 'Jane';
+    person2.lastName = 'Sunset';
+    person2.age = 31;
+
+    console.log(person.fullName()); //you need to add () in order to return result of function instead of string
+
+    console.log(person.calcAge());
+
+    
+    console.log(person);
+
+*/
+
+//exercise
+/*
+    var Mark = {
+        FullName: 'Mark',
+        Height: 200,
+        Mass: 99,
+        BMI: function(){
+            return this.Mass/ this.Height * this.Height;
+        }
+    };
+    var John = {
+        FullName: 'John',
+        Height: 160,
+        Mass: 120,
+        BMI: function(){
+            return this.Mass/ this.Height * this.Height;
+        }
+    };
+
+    console.log('Mark BMI is '+ Mark.BMI() + " John BMI is " + John.BMI());
+    
+    var MarkBMI = Mark.BMI();
+    var JohnBMI = John.BMI();
+    if (MarkBMI > JohnBMI) {
+        console.log('Mark BMI is higher about ' + (MarkBMI - JohnBMI));
+    } else if (MarkBMI < JohnBMI){
+        console.log('John BMI is higher about ' + (JohnBMI - MarkBMI));
+    } else {
+        console.log('John and Mark BMIs are the same');
+    }
+
+    end of exercise*/
+
+
+/****************************************************************************
+ * Loops - For && whikle
+ */
+
+ /**example 1 
+ for (var i= 1; i <= 5; i++){  // or i+=2  --> i= i+2
+     console.log(i);
+ }
+
+ // i = 1, 1 < 5, true - log i, increment i by +1
+ // i = 2, 2<5, true - log i, increment i by +1
+ // i ..
+ // i = 6, 6<5, false, exit the loop
+
+*/
+
+/** example 2 */
+
+
+/********* 
+// For loop
+
+var john= ['Mr.','Kowalski',23,180,'blue'];
+john.push('big');
+
+for (var i= 0; i < john.length; i++){
+    console.log(john[i]);
+}
+
+// The For / In loop
+
+for (var i in john){
+    console.log(john[i]);
+}
+
+// the For / Of loop
+
+for (var i of john){
+    console.log(i);
+}
+
+end of For loop */
+
+// While loop
+/*
+var john= ['Mr.','Kowalski',23,180,'blue'];
+john.push('big');
+
+var i = 0;
+
+while (i < john.length){  // while + (condition) --> we can put only a condition between the brackets
+    console.log(john[i]);
+    i++;
+}
+
+// Do / while loop
+/* Commands:
+
+Do {
+    // code block to execute
+}
+while (condition);
+
+//example:
+
+var i = 0;
+do {
+    console.log(john[i]);
+    i++;
+}
+while (i < john.length);
+
+*/
+
+///// Continue && Break statements
+// the Break jumps out of a loop;
+// the Continue jump over one interation in a loop;
+
+/** 
+var john= ['Mr.','Kowalski',23,180,'blue', false,'Driver'];
+john.push('big');
+
+for (var i= 0; i < john.length; i++){
+    if (typeof john[i] !== 'string') continue; //-- we can skip {} for if when there is no else command
+    console.log(john[i]);
+}
+
+for (var i= 0; i < john.length; i++){
+    if (typeof john[i] !== 'string') {break;} //-- with {}
+    console.log(john[i]);
+}
+
+*/
+
+
+//////////////////////////exercise
+/*
+  //
+  var billJohn = [124,48,268,180,42];
+  var tipJohn = [];
+  var totalJohn = [];
+
+  for (var i =0; i < billJohn.length; i++){
+      if (billJohn[i] < 50){
+          tipJohn[i] = billJohn[i] * 0.2;
+          totalJohn[i] = billJohn[i] + tipJohn[i];
+      } else if (billJohn[i] >= 50 && billJohn[i] <200){
+          tipJohn[i] = billJohn[i] * 0.15;
+          totalJohn[i] = billJohn[i] + tipJohn[i];
+      } else { 
+        tipJohn[i] = billJohn[i] * 0.1;
+        totalJohn[i] = billJohn[i] + tipJohn[i];
+      }
+    
+  }
+
+  var billMark = [124,48,268,180,42];
+  var tipMark = [];
+  var totalMark = [];
+
+  for (var i =0; i < billMark.length; i++){
+      if (billMark[i] < 100){
+          tipMark[i] = billMark[i] * 0.2;
+          totalMark[i] = billMark[i] + tipMark[i];
+      } else if (billMark[i] >= 100 && billMark[i] <300){
+        tipMark[i] = billMark[i] * 0.2;
+        totalMark[i] = billMark[i] + tipMark[i];
+      } else { 
+        tipMark[i] = billMark[i] * 0.25;
+        totalMark[i] = billMark[i] + tipMark[i];
+      }
+    
+  }
+  
+  var stingtipJohn = tipJohn.join(', ');
+  var stingtipMark = tipMark.join(', ');
+  console.log('John tips are:  ' + stingtipJohn);
+  console.log('Mark tips are:  ' + stingtipMark);
+
+  // function to calclulate the avg tips for both guys
+  function calcAverage (tips){
+    var sum =0;
+    for (var i=0; i < tips.length; i++){
+        sum += tips[i];
+    }
+    return sum/tips.length;
+
+  }
+
+  var avgTipJohn= calcAverage(tipJohn); // variable to run the function and calc the avg tip for one of the guys
+  console.log(avgTipJohn + ' is the avg of ' + tipJohn);
+  var avgTipMark= calcAverage(tipMark);
+  console.log(avgTipMark + ' is the avg of ' + tipMark);
+
+  if (avgTipJohn > avgTipMark){
+      console.log('John avg of tips is higher than Mark ');
+  } else {
+    console.log('Mark avg of tips is higher than John ');
+  }
+
+  end of exercise */
+

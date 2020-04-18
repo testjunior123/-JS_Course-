@@ -554,3 +554,20 @@ for (var i= 0; i < john.length; i++){
 
   end of exercise */
 
+//////// another example of simple function
+
+function myFunc(theObject) {
+    theObject.make = 'Toyota';
+    theObject.model = 'Camry';
+  }
+  
+  var mycar = {make: 'Honda', model: 'Accord', year: 1998};
+  var x,
+  var y = []
+  
+  x = mycar.make; // x gets the value "Honda"
+  
+  myFunc(mycar);
+  y = mycar.make; // y gets the value "Toyota"
+                  // (the make property was changed by the function)
+ console.log(y);
